@@ -1,0 +1,98 @@
+
+<style>
+    .maincontainer{
+        width: 100vw;
+        height: 100vh;
+        background-color: #4834d4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .box{
+        background: #fff;
+        width: 40vw;
+        height: auto;
+        padding: 20px;
+        border-radius: 15px;
+    }
+    .headingtext{
+    font-size: 25px;
+    font-family: Lobster;
+    padding: 10px;
+    }
+    .headingtext1{
+    font-size: 20px;
+    font-family: Roboto Condensed;
+    font-weight: bold;
+    padding: 5px;
+    }
+</style>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="/static/category.js"></script>
+        <title> Pay N Rent | Edit/Delete</title>
+        <link rel="website icon" type="jpg" href="/static/logo.jpg">
+    </head>
+    <body>
+        <div class="maincontainer">
+            <div class="box">
+                <form class="row g-3" action="/api/subcategoryedit" enctype="multipart/form-data"> {% csrf_token %} 
+                    <div class="col-md-12 headingtext">
+                        <img src="/static/logo.jpg" style="width:80px; height:60;"/>
+                        Edit SubCategory
+                    </div>
+                    <input type="hidden" name="id" value="{{data.id}}">
+                    <div class="col-md-12 headingtext1">
+                        <label for="categoryid" class="form-label"><b>Category Name</b></label>
+                        <select type="text" name="categoryid" class="form-select"id="categoryid" required>
+                            <option  value="{{data.categoryid}}">{{data.categoryname}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 headingtext1">
+                        <label for="comapanyname" class="form-label"><b>Company Name</b></label>
+                        <select type="text" name="companyname" class="form-select" id="companyname" required>
+                            <option>{{data.companyname}}</option>
+                            <option> Maruti</option>
+                            <option> MG</option>
+                            <option> Toyota</option>
+                            <option> Mahindra</option>
+                            <option> Tata</option>
+                            <option> Force</option>
+                            <option> Kia</option>
+                            <option> Voxwagon</option>
+                            <option> Nissan</option>
+                            <option>Audi</option>
+                            <option>BMW</option>
+                            <option>Mercedes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 headingtext1">
+                        <label for="subcategoryname" class="form-label"><b>SubCategory Name</b></label>
+                        <input type="text" name="subcategoryname" value="{{data.subcategoryname}}" class="form-control" id="subcategoryname" required>
+                    </div>
+                    <div class="col-md-12 headingtext1">
+                        <label for="description" class="form-label"><b>Description</b></label>
+                        <input type="text" name="description" value="{{data.description}}" class="form-control" id="description" required>
+                    </div>
+                    <div class="col-md-6" style="display: flex; justify-content: center; align-items: center; padding-top: 5px;">
+                        <button style="width: 75%;" value="EDIT" type="submit" name="btn" class="btn btn-success">Edit</button>
+                    </div>
+                    <div class="col-md-6" style="display: flex; justify-content: center; align-items: center; padding-top: 5px;">
+                        <button style="width: 75%;" value="DELETE" type="submit" name="btn" class="btn btn-danger">Delete</button>
+                    </div>
+                    <div class="col-md-12" style="display: flex;flex-direction: row; align-items: center; justify-content: center;">
+                        <span style="font-weight: bold;">{{message}}</b></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<style>
+  .maincontainer1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    /* background-image: url(background3.png); */
+    background: #4834d4;
+    background-repeat: no-repeat;
+  }
+
+  .box1 {
+    padding: 10px;
+    background: #fff;
+    border-radius: 25px;
+    border: 2px solid rgba(10, 20, 30, 20);
+    width: 80vw;
+    height: 80vh;
+    /* use auto for auto increament */
+    overflow: scroll;
+  }
+
+  .headingtext4 {
+    font-size: 25px;
+    font-family: Playfair Display;
+    color: #000000;
+    font-weight: bold;
+    padding: 15px;
+  }
+</style>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>
+    Pay N Rent | Display Category
+  </title>
+  <link rel="website icon" type="jpg" href="/static/logo1.png">
+</head>
+
+<body>
+  <div class="maincontainer1">
+    <div class="box1">
+      <div class="col-md-12"style="width: 75vw;display: flex;flex-direction: row; align-items: center; justify-content: space-between;">
+        <div class="headingtext4">
+          <img src="/static/logo1.png" style="width:60px; height: 60px; margin-right: 2px;" />
+          List Of Category
+        </div>
+        <div>
+          <a href="/api/categoryinterface"><img src="/static/addlogo1.jpg" style="width: 80;height: 80;" /></a>
+        </div>
+      </div>
+      <table class="table table-bordered border-primary table-success border border-success">
+        <thead>
+          <tr>
+            <th scope="col">Category Id</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">
+              <center>Icon</center>
+            </th>
+            <th scope="col">Edit/Delete</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            {% for record in data %}
+            <th scope="row">{{record.id}}</th>
+            <td>{{record.categoryname}}</td>
+            <td>{{record.description}}</td>
+            <td>
+              <center><a
+                  href="/api/displaycategoryicon?id={{record.id}}&cn={{record.categoryname}}&icon={{record.icon}}"><img src="{{record.icon}}" style="height: 100px;" /></center></a>
+            </td>
+            <td><a href="/api/displaycategorybyid?id={{record.id}}" style="text-decoration: none;">Edit/Delete</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

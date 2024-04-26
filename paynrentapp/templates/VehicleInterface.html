@@ -1,0 +1,205 @@
+<style>
+    .maincontainer{
+        width: 100vw;
+        height: 100vh;
+        background-color: #4834d4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .box{
+        background: #fff;
+        width: 70vw;
+        height: 95vh;
+        padding: 5px;
+        border-radius: 15px;
+        /* overflow: scroll; */
+    }
+    .headingtext{
+    font-size: 30px;
+    font-family: Lobster;
+    padding: 5px;
+    }
+    .headingtext1{
+    font-size: 18px;
+    font-family: Roboto Condensed;
+    font-weight: bold;
+    padding: 4px;
+    }
+</style>
+<!-- <script type="text/javascript">
+    $(function(){
+        $('.modelyear').datepicker({
+            minViewMode: 2,
+            format:'yyyy'
+        }).on('changeDate',function(e){
+            $(this).datepicker('hide')
+        })
+    })
+</script> -->
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+        <script src="/static/category.js"></script>
+        <title> Pay  N Rent | Vehicle Interface</title>
+        <link rel="website icon" type="jpg" href="/static/logo1.png">
+        <style>
+            .ui-datepicker-calendar{
+                display: none;
+            }
+        </style>
+        <script type="text/javascript">
+            $(function(){
+                $('.modelyear').datepicker({
+                    minViewMode: 2,
+                    format:'yyyy'
+                }).on('changeDate',function(e){
+                    $(this).datepicker('hide')
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="maincontainer">
+            <div class="box">
+                <form class="row g-3" action="/api/vehiclesubmit" enctype="multipart/form-data" method="POST"> {% csrf_token %} 
+                    <div class="col-md-12" style="width: 75vw;display: flex;flex-direction: row; align-items: center; justify-content: space-between">
+                    <div class=" headingtext">
+                        <img src="/static/logo1.png" style="width:50px; height:50;"/>
+                        Add New Vehicle
+                    </div>
+                      <a href="/api/vehicledisplay"><img src="/static/listicon1.jpg" style="width:50px; height:50;"/></a>
+                </div>
+                <div class="col-md-4 headingtext1"style="margin-top:4px;">
+                    <label for="categoryid" class="form-label"><b>Category Name</b></label>
+                    <select type="text" name="categoryid" class="form-select" id="categoryid" required></select>
+                </div>
+                    <div class="col-md-4 headingtext1"style="margin-top:4px;">
+                        <label for="subcategorid" class="form-label"><b>SubCategory Name</b></label>
+                        <select type="text" name="subcategoryid" class="form-select" id="subcategoryid" required>
+                            <option>Select SubCategory</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 headingtext1" style="margin-top:4px;">
+                        <label for="comapanyname" class="form-label"><b>Company Name</b></label>
+                        <select type="text" name="companyname" class="form-select" id="companyname" required>
+                            <option>Select Company Name</option>
+                            <option> Maruti</option>
+                            <option> MG</option>
+                            <option> Toyota</option>
+                            <option> Mahindra</option>
+                            <option> Tata</option>
+                            <option> Force</option>
+                            <option> Kia</option>
+                            <option> Voxwagon</option>
+                            <option> Nissan</option>
+                            <option>Audi</option>
+                            <option>BMW</option>
+                            <option>Mercedes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 headingtext1"style="margin-top:2px;">
+                        <label for="variant" class="form-label"><b>Variant</b></label>
+                        <input type="text" name="variant" class="form-control" id="variant" required>
+                    </div>
+                    <div class="col-md-4 headingtext1"style="margin-top:2px;">
+                        <label for="modelyear" class="form-label"><b>Model Year</b></label>
+                        <input type="text" name="modelyear" class="form-control modelyear" id="modelyear" required>
+                    </div>
+                    <div class="col-md-4 headingtext1"style="margin-top:2px;">
+                        <label for="price" class="form-label"><b>Price</b></label>
+                        <input type="text" name="price" class="form-control" id="price" required>
+                    </div>
+                    <div class="col-md-4 headingtext1"style="margin-top:2px;">
+                        <div><b>Insurance</b></div>
+                        <div style="display: flex; justify-content: space-evenly; flex-direction: row;"> <!-- flex direction is in column wise by default-->
+                            <div class="form-check"style="padding-top: 8px;">
+                                <input class="form-check-input" type="radio" value="Yes" name="insured" id="insured">
+                                <label class="form-check-label" for="insured">
+                                Yes
+                                </label>
+                            </div>
+                            <div class="form-check"style="padding-top: 8px;">
+                                <input class="form-check-input" type="radio" value="No" name="insured" id="insured">
+                                <label class="form-check-label" for="insured">
+                                No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 headingtext1"style="margin-top:2px;">
+                        <label for="registrationno" class="form-label"><b>Registration No</b></label>
+                        <input type="text" name="registrationno" class="form-control" id="registrationno" required>
+                    </div>
+                    <div class="col-md-4 headingtext1"style="margin-top:2px;">
+                        <label for="ownername" class="form-label"><b>Owner Name</b></label>
+                        <input type="text" name="ownername" class="form-control" id="ownername" required>
+                    </div>
+                    <div class="col-md-4 headingtext1"style="margin-top:2px;">
+                        <label for="mobileno" class="form-label"><b>Mobile No</b></label>
+                        <input type="text" name="mobileno" class="form-control" id="mobileno" required>
+                    </div>
+                    <div class="col-md-4 headingtext1"style="margin-top:2px;">
+                        <label for="color" class="form-label"><b>Colour</b></label>
+                        <input type="text" name="color" class="form-control" id="color" required>
+                    </div>
+                    <div class="col-md-4 headingtext1"style="margin-top:2px;">
+                        <lable for="fueltype" class="form-label"><b>Fuel Type</b></lable>
+                        <select type="text" name="fueltype" class="form-select" id="fueltype" style="margin-top: 8;" required>
+                            <option>Select Fuel Type</option>
+                            <option>Petrol</option>
+                            <option>Diesel</option>
+                            <option>CNG</option>
+                            <option>EV</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 headingtext1"style="margin-top:2px;">
+                        <label for="noofseats" class="form-label"><b>No. Of Seats</b></label>
+                        <input required type="number" min="2" max="20" name="noofseats" class="form-control" id="noofseats">
+                    </div>
+                    <div class="col-md-4 headingtext1"style="margin-top:2px;">
+                        <div><b>Transmission Type</b></div>
+                        <div style="display: flex; justify-content: space-evenly; flex-direction: row;"> <!-- flex direction is in column wise by default-->
+                            <div class="form-check"style="padding-top: 8px;">
+                                <input class="form-check-input" type="radio" value="Automatic" name="transmissiontype" id="transmissiontype">
+                                <label class="form-check-label" for="transmissiontype">
+                                Automatic
+                                </label>
+                            </div>
+                            <div class="form-check" style="padding-top: 8px;">
+                                <input class="form-check-input" type="radio" value="Manual" name="transmissiontype" id="transmissiontype">
+                                <label class="form-check-label" for="transmissiontype">
+                                Manual
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 headingtext1" style="margin-top:2px;">
+                        <label for="picture" class="form-label"><b>Vehicle Picture</b></label>
+                        <input class="form-control" type="file" id="picture" name="picture">
+                    </div>
+                    <div class="col-md-6" style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
+                        <button style="width: 75%;" type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                    <div class="col-md-6" style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
+                        <button style="width: 75%;" type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                    <div class="col-md-12" style="display: flex;flex-direction: row; align-items: center; justify-content: center; margin-top: 0px;">
+                        <span style="font-weight: bold;">{{message}}</b></span>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

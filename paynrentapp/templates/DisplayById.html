@@ -1,0 +1,70 @@
+
+<style>
+    .maincontainer{
+        width: 100vw;
+        height: 100vh;
+        background-color: #4834d4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .box{
+        background: #fff;
+        width: 40vw;
+        height: auto;
+        padding: 20px;
+        border-radius: 15px;
+    }
+    .headingtext{
+    font-size: 25px;
+    font-family: Lobster;
+    padding: 10px;
+    }
+    .headingtext1{
+    font-size: 20px;
+    font-family: Roboto Condensed;
+    font-weight: bold;
+    padding: 5px;
+    }
+</style>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="maincontainer">
+            <div class="box">
+                <form class="row g-3" action="/api/categoryedit" enctype="multipart/form-data"> {% csrf_token %} 
+                    <div class="col-md-12 headingtext">
+                        <img src="/static/logo1.png" style="width:80px; height:60;"/>
+                        Edit Category
+                    </div>
+                    <input type="hidden" name="id" value="{{data.id}}">
+                    <div class="col-md-12 headingtext1">
+                        <label for="categoryname" class="form-label"><b>Category Name</b></label>
+                        <input type="text" name="categoryname" value="{{data.categoryname}}" class="form-control" id="categoryname">
+                    </div>
+                    <div class="col-md-12 headingtext1">
+                        <label for="description" class="form-label"><b>Description</b></label>
+                        <input type="text" name="description" value="{{data.description}}" class="form-control" id="description">
+                    </div>
+                    <div class="col-md-6" style="display: flex; justify-content: center; align-items: center; padding-top: 5px;">
+                        <button style="width: 75%;" value="EDIT" type="submit" name="btn" class="btn btn-success">Edit</button>
+                    </div>
+                    <div class="col-md-6" style="display: flex; justify-content: center; align-items: center; padding-top: 5px;">
+                        <button style="width: 75%;" value="DELETE" type="submit" name="btn" class="btn btn-danger">Delete</button>
+                    </div>
+                    <div class="col-md-12" style="display: flex;flex-direction: row; align-items: center; justify-content: center;">
+                        <span style="font-weight: bold;">{{message}}</b></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

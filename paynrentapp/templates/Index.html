@@ -1,0 +1,423 @@
+<style>
+    .maincontainer {
+        background-color: #f1f4f8;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        display: flex;
+    }
+    .appbar {
+        background-color: #fff;
+        width: 100vw;
+        height: 60px;
+        flex-direction: row;
+        display: flex;
+        position: fixed;
+    }
+
+    .logo {
+        width: 55px;
+        height: 45px;
+        margin-left: 3%;
+        margin-top: 0.5%;
+    }
+
+    .signinicon {
+        /* font-size: 32; */
+        margin-right: 4%;
+        width: 28px;
+        height: 28;
+    }
+
+    .signintextbox {
+        margin-left: auto;
+        width: 12%;
+        display: flex;
+        font-family: "Poppins";
+        font-size: 18px;
+        margin-top: 0.5%;
+        margin-right: 12%;
+    }
+
+    .faq {
+        justify-content: right;
+        width: 65%;
+        display: flex;
+        font-family: "Poppins";
+        font-size: 18px;
+        margin-top: 0.5%;
+    }
+    .sidebox {
+        width: 500px;
+        height: 450px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        margin: 30px;
+        margin-left: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .row {
+        background-image: url(/static/bgcolor.png);
+        background-size: cover;
+        text-align: center;
+        margin-top: 0px;
+        padding: 0px;
+        height: 580px;
+        width: 100%;
+        font-family: "Poppins";
+    }
+
+    .image_center {
+        width: 600px;
+        height: 400px;
+        border-radius: 10px;
+        margin: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0px;
+    }
+
+    .box {
+        width: 400px;
+        height: 50px;
+        border: 1px solid #778ca3;
+        border-radius: 10px 10px 0px 0px;
+        border-bottom: none;
+    }
+
+    .boxleft {
+        width: 200px;
+        height: 50px;
+        border: 1px solid #778ca3;
+        border-radius: 0px 0px 0px 10px;
+        border-right: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .boxright {
+        width: 200px;
+        height: 50px;
+        border: 1px solid #778ca3;
+        border-radius: 0px 0px 10px 0px;
+    }
+
+    .button_style {
+        width: 400px;
+        height: 60px;
+        border: 1px solid #778ca3;
+        border-radius: 24px;
+        margin-top: 10px;
+        background-image: linear-gradient(to left, rgb(28, 171, 162) 25%, rgb(28, 127, 171));
+        border: none;
+        text-align: center;
+        color: #fff;
+        padding-top: 15px;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .centeralign {
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .textstyle {
+        border: none;
+        outline: none;
+        font-weight: bold;
+        font-size: 20;
+        cursor: pointer;
+    }
+
+    .contact_us {
+        background: #fff;
+        padding: 30px 20px;
+        margin-top: 20px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .07);
+        height: 350px;
+        width: 80%;
+        border-radius: 12px;
+        margin-left: 200;
+    }
+
+    .new_row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .new_logo {
+        width: 96px;
+        height: 72px;
+        margin-bottom: 50px;
+    }
+
+    .text_contant {
+        font-size: 15px;
+        color: rgba(18, 34, 50, .7);
+        line-height: 1.43;
+        font-family: 'poppins';
+    }
+
+    .desk_center{
+        font-family: 'poppins';
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+    }
+    .other-pages{
+        list-style: none;
+    }
+    .text_contant1{
+        color: rgba(18, 34, 50, .7);
+        text-decoration: none;
+        display: flex;
+        margin-top: 20px;
+    }
+    .connect{
+        font-family: "poppins";
+        color: rgba(18, 34, 50, .7);
+        font-size: 20px;
+    }
+    .connect_links{
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+    .socials{
+        display: flex;
+        margin-block-start: 0;
+        margin-right: 10%;
+        margin-bottom: 50px;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .app{
+        display: flex;
+        font-family: 'poppins';
+
+    }
+    .datetextstyle {
+        border: none;
+        outline: none;
+        font-weight: bold;
+        font-size: 15;
+        align-items: center;
+        width: 90%;
+        height: 90%;
+        padding-left: 20px;
+        cursor:pointer;
+    }
+    .cartime{
+        margin-top: 15px;
+        font-weight: 600;
+    }
+</style>
+<html>
+
+<head>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"/>
+    <!-- datetimepicker jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+    <title id="cheading"></title>
+    <link rel="website icon" type="jpg" href="/static/logo1.png">
+    <script>
+        $(document).ready(function () {
+            $(".city").click(function () {
+                $('#dcity').val($(this).attr('scity'))
+                $('#cheading').html(`Car Rental in ${$(this).attr('scity')}`)
+            })
+            $(".datetimepicker").each(function () {
+                $(this).datetimepicker();
+            });
+            $("#enddate").change(function(){
+                const date1 = new Date($('#startdate').val());
+                const date2 = new Date($('#enddate').val());
+                const diffTime = Math.abs(date2 - date1);
+                Sec=parseInt(diffTime/1000)
+                Minute=parseInt(Sec/60)
+                Hour=parseInt(Minute/60)
+                Day=parseInt(Hour/24)
+                Hour=Hour%24
+                const diffDays = parseInt(diffTime / (1000 * 60 * 60 * 24)); 
+                $("#cartime").html("Duration: "+diffDays+" Days and "+Hour+" Hours");
+                $("#dh").val(diffDays+" : "+Hour);
+            })
+            $('#btn').click(function(){
+                $.getJSON('http://localhost:8000/api/showvehiclelist',{city:$('#dcity').val(),starttime:$('#startdate').val(),endtime:$('#enddate').val(),dh:$('#dh').val()},function(data){
+                    window.location.href=  `http://localhost:8000/api/uservehiclelist`
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="maincontainer">
+        <div class="appbar">
+            <img src="/static/logo1.png" class="logo" />
+            <div class="faq">
+                FAQs
+            </div>
+            <div class="signintextbox">
+                <ion-icon name="log-in-outline" class="signinicon"></ion-icon>
+                <text class="login">Login or Signup</text>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="margin-top: 40px;">
+                <div class="sidebox">
+                    <div>
+                        <img src="/static/heading_leftbox.png" width="80%" />
+                        <img src="/static/rentals1.png"/>
+                        <div id="cheading" style="padding: 20px;display: flex; font-size: 18px;font-weight: bold;justify-content: center;">Self Drive Cars in India</div>
+                    </div>
+                    <div>
+                        <div class="box centeralign">
+                            <div style="width: 50px;">
+                                <img src="/static/locationRental.svg" style="display: flex;margin-left: 20px;margin-right: 50px;"/>
+                            </div>
+                            <div data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <input type="text" class="textstyle" id="dcity" placeholder="Select City.....">
+                            </div>
+                        </div>
+                        <div style="display: flex;flex-direction: row;">
+                            <div class="boxleft">
+                                <div>
+                                    <input type="text" id="startdate" class="datetimepicker datetextstyle" placeholder="Start Time"/>
+                                </div>
+                            </div>
+                            <div class="boxright">
+                                <div>
+                                    <input type="text" id="enddate" class="datetimepicker datetextstyle" placeholder="End Time"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="dh"/>
+                    <div id="cartime" class="cartime">
+                    </div>
+                    <div id="btn" class="button_style">
+                        <b>Search</b>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="image_center">
+                    <img src="/static/home_top.webp" width="80%" />
+                </div>
+            </div>
+        </div>
+        <div class="contact_us">
+            <div class="new_row">
+                <div class="col-12 col-md-4">
+                    <div class="new_logo">
+                        <img src="/static/logo1.png" width="150%" />
+                    </div>
+                    <p class="text_contant">
+                        © 2023 Primemover Mobility Technologies Pvt Ltd. All rights reserved
+                    </p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="desk_center">
+                        <ul class="other-pages">
+                            <div>
+                            <li>
+                                <a href="*" class="text_contant1" >Home</a>
+                            </li>
+                            <li>
+                                <a href="*"class="text_contant1">FAQs</a>
+                            </li>
+                            <li>
+                                <a href="*"class="text_contant1">Policy</a>
+                            </li>
+                            <li>
+                                <a href="*"class="text_contant1">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="connect">
+                        <h4 style="font-weight: 500; margin-top: 20px;">Social</h4>
+                        <ul class="connect_links">
+                            <li class="socials">
+                                <a href="*">
+                                    <img src="/static/facebooklogo.png"/>
+                                </a>
+                            </li>
+                            <li class="socials">
+                                <a href="*">
+                                    <img src="/static/twitterlogo.png"/>
+                                </a>
+                            </li>
+                            <li class="socials">
+                                <a href="*">
+                                    <img src="/static/instagramlogo.png"/>
+                                </a>
+                            </li>
+                            <li class="socials">
+                                <a href="*">
+                                    <img src="/static/youtubelogo.png"/>
+                                </a>
+                            </li>
+                            <li class="socials">
+                                <a href="*">
+                                    <img src="/static/linkedInlogo.png"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="app">
+                        <p>Download the Pay N Rent App!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Select City</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <h4 class="city" scity="Gwalior">Gwalior</h4>
+                    <h4 class="city" scity="New Delhi">New Delhi</h4>
+                    <h4 class="city" scity="Noida">Noida</h4>
+                    <h4 class="city" scity="Pune">Pune</h4>
+                    <h4 class="city" scity="Indore">Indore</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

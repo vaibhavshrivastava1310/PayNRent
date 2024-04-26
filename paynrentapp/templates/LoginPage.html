@@ -1,0 +1,143 @@
+<script>
+  function myFunction(){
+    var show=document.getElementById('password')
+    if(show.type=='password'){
+      show.type='text';
+    }
+    else{
+      show.type='password';
+    }
+  }
+</script>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .half1 {
+    background-image: url(/static/bg5.png);
+    /* height: 100vh;
+    width: 100vw; */
+     background-size: 100% 100%;
+    /* background-repeat: no-repeat;  */
+  }
+  .box{
+    padding: 10px;
+    height: 60vh;
+    width: 30vw;
+    background:#fff;
+    border-radius: 25px;
+    border: 2px solid rgba(10, 20, 30, 20);
+    box-shadow: 5px 10px 8px 10px #888888;
+  }
+  /* .box1{
+    background:#fff;
+    border: 1px  rgba(8, 10, 20, 10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    width: 20vw;
+  } */
+  .box1{
+    margin: 2px auto;
+    width:100%;
+    border-bottom: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+  .inputbox{
+    width:90%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #000000;
+    font-size: 20px;
+  }
+  .headingtext{
+    font-size: 25px;
+    font-family: Playfair Display;
+    color: #000000;
+    padding: 15px;
+  }
+  span{
+    position: absolute;
+    right: 200px;
+  }
+  #hide1{
+    display:none;
+  }
+  .half2{
+    background-color: #fff;
+  }
+  .message{
+    display: flex;flex-direction: row; align-items: center; justify-content: center;font-weight: bold;font-size: 15px;margin-top: 15px ;
+  }
+</style>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <title> Pay N Rent | Login</title>
+  <link rel="website icon" type="jpg" href="/static/logo1.png">
+</head>
+<body>
+  <form action="/api/checkadminlogin" method="get">
+  <div class="maincontainer ">
+    <div class="row headingtext" style="padding: 0px;margin: 0px;height: 100%; display: flex;">
+      <div class="col-md-6 half1">
+        <div style="display: flex;justify-content: center; padding-right: 50px; margin-top: 90px; font-weight: bolder;">
+        <text style="font-size: 40px; color: red;">Welcome to Pay N Rent</text>
+      </div>
+      <div class="col-md-12" style="display: flex;justify-content: center; padding-right: 50px; font-weight: bolder;">
+        <text>Your Convinence , Our Duty</text>
+      </div>
+    </div>
+      <div class="col-md-6 half2" style="display: flex;justify-content: center;align-items: center;">
+        <div class="box">
+          <div class="col-md-12" style=" display:flex;justify-content: center; align-items: center;" >
+            <img src="/static/profilepic.svg" style="width:100px; height: 100px; padding: 10px;" />
+          </div>
+          <div style="display: flex;flex-direction: column; justify-content: space-between; align-items: center;">
+          <div style="padding: 10px;display: flex; margin-bottom: 0px;">
+          <div class="box1" style=" display:flex;justify-content: center; align-items: center; width: 25vw;">
+            <i class="bi bi-person-fill" style="margin-right: 0;"></i>
+            <input class="inputbox"  style="margin-left: 10;" type="input" placeholder="Enter Your Email/Mobile Number" id="mobileno" name="mobileno" required autocomplete="off">
+          </div>
+           </div>
+           <div style="padding:10px; display: flex; margin-top: px;">
+          <div class="box1" style=" display:flex;justify-content: center; align-items: center; width: 25vw;">
+            <i class="bi bi-lock-fill"></i>
+            <input class="inputbox" style="margin-left: 10;" type="password" placeholder="Enter Your Password" id="password" name="password" required>
+          </div>
+        </div>
+        <div style="font-size: 18px;display: flex; margin-left: 50%; text-decoration: none;">
+          <input type="checkbox" style="margin-right: 10;" onclick="myFunction()">Show Password
+        </div>
+        </div>
+          <div style="margin: 10px; display: flex; align-items: center; justify-content: center;">
+          <button style="width: 25vw; font-size: 18px; margin-left: 5px; border-radius: 25px;" type="submit" class="btn btn-outline-success">Login</button>
+          </div>
+          <div class="col-md-12" style="display:flex;justify-content: right;">
+            <a href="*" class="link-secondary"style="text-decoration: none; margin-top:9px; font-size: 17px;">Forgot password</a>
+          </div>
+          <div class="message">
+            <span>{{message}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</body>
+</html>
